@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.corner-nav {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  opacity: 0.45;
+  font-size: 0.85rem;
+}
+
+.corner-nav:focus-within,
+.corner-nav:hover {
+  opacity: 1;
+}
+
+.corner-nav a {
+  text-decoration: none;
+}
