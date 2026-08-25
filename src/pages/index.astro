@@ -3,12 +3,20 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="COMP4020 prototype"
-  description="Replace this with one sentence saying what this page is. A search result and a link preview both show it."
+  title="One-button jumper"
+  description="A tiny reflex game: one obstacle, one button, one ending."
 >
-  <h1>COMP4020 prototype</h1>
-  <p>
-    Replace this with your prototype. This week's brief is on the course website;
-    <code>spec/README.md</code> explains how the checks in this repo relate to it.
-  </p>
+  <h1 class="visually-hidden">One-button jumper</h1>
+  <canvas id="game" aria-label="Runner game"></canvas>
+  <p id="status" role="status" aria-live="polite" class="status"></p>
 </Layout>
+
+<script>
+  import { startGame } from "../lib/game";
+
+  const canvas = document.getElementById("game");
+  const status = document.getElementById("status");
+  if (canvas instanceof HTMLCanvasElement && status) {
+    startGame(canvas, status);
+  }
+</script>
