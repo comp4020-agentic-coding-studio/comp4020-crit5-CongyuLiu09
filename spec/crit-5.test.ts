@@ -8,9 +8,9 @@ import { describe, expect, it } from "vitest";
 // actually feels fair is for the crit, but shipping *some* detectable end
 // state is a mechanical floor worth asserting on the built site.
 //
-// "one rule of the game has a focused automated test" is also spec, but which
-// rule and what it asserts is mine to decide once the mechanic exists — add
-// that test to this file alongside the one below as the game takes shape.
+// "one rule of the game has a focused automated test" is also spec: that rule
+// is the collision that ends a round, and its focused test lives with the
+// logic it tests, at src/lib/collision.test.ts.
 const DIST = resolve("dist");
 
 function files(dir: string = DIST): string[] {
